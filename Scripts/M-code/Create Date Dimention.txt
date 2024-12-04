@@ -1,0 +1,27 @@
+let
+    StartDate = #date(1996, 1, 1),
+    EndDate = #date(1999, 1, 1),
+    NumberOfDays = Duration.Days(Duration.From(EndDate-StartDate)),
+    Source = List.Dates(StartDate,NumberOfDays ,#duration(1,0,0,0)),
+    TableFromList = Table.FromList(Source,Splitter.SplitByNothing(),{"Date"}),
+    #"Convert to Date" = Table.TransformColumnTypes(TableFromList,{{"Date", type date}}),
+    #"Add DateKey" = Table.AddColumn(#"Convert to Date", "OrderDateKey", each Text.PadStart(Text.From(Date.Year([Date])), 4, "0") &
+Text.PadStart(Text.From(Date.Month([Date])), 2, "0") &
+Text.PadStart(Text.From(Date.Day([Date])), 2, "0")),
+    #"Converted DateKey" = Table.TransformColumnTypes(#"Add DateKey",{{"OrderDateKey", Int64.Type}}),
+    #"Move DateKey" = Table.ReorderColumns(#"Converted DateKey",{"OrderDateKey", "Date"}),
+    #"Inserted Year" = Table.AddColumn(#"Move DateKey", "Year", each Date.Year([Date]), Int64.Type),
+    #"Inserted Quarter" = Table.AddColumn(#"Inserted Year", "Quarter", each Date.QuarterOfYear([Date]), Int64.Type),
+    #"Inserted Month" = Table.AddColumn(#"Inserted Quarter", "Month", each Date.Month([Date]), Int64.Type),
+    #"Inserted Day" = Table.AddColumn(#"Inserted Month", "Day", each Date.Day([Date]), Int64.Type),
+    #"Inserted Month Name" = Table.AddColumn(#"Inserted Day", "MonthName", each Date.MonthName([Date])),
+    #"Inserted Day of Week" = Table.AddColumn(#"Inserted Month Name", "Day of Week", each Date.DayOfWeek([Date]), Int64.Type),
+    #"Inserted Day Name" = Table.AddColumn(#"Inserted Day of Week", "Day Name", each Date.DayOfWeekName([Date]), type text),
+    #"Inserted IsWeekend" = Table.AddColumn(#"Inserted Day Name", "IsWeekend", each if (
+    Date.DayOfWeek([Date], Day.Sunday) = 0 or 
+    Date.DayOfWeek([Date], Day.Sunday) = 6
+) 
+then "Weekend" 
+else "Weekday")
+in
+    #"Inserted IsWeekend"
