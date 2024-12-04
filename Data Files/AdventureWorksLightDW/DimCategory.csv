@@ -1,0 +1,38 @@
+SubCategoryKey,OriginalSubCategoryId,OriginalCategoryId,SubCategoryName,CategoryName
+1,1,1,Mountain Bikes,Bikes
+2,2,1,Road Bikes,Bikes
+3,3,1,Touring Bikes,Bikes
+4,4,2,Handlebars,Components
+5,5,2,Bottom Brackets,Components
+6,6,2,Brakes,Components
+7,7,2,Chains,Components
+8,8,2,Cranksets,Components
+9,9,2,Derailleurs,Components
+10,10,2,Forks,Components
+11,11,2,Headsets,Components
+12,12,2,Mountain Frames,Components
+13,13,2,Pedals,Components
+14,14,2,Road Frames,Components
+15,15,2,Saddles,Components
+16,16,2,Touring Frames,Components
+17,17,2,Wheels,Components
+18,18,3,Bib-Shorts,Clothing
+19,19,3,Caps,Clothing
+20,20,3,Gloves,Clothing
+21,21,3,Jerseys,Clothing
+22,22,3,Shorts,Clothing
+23,23,3,Socks,Clothing
+24,24,3,Tights,Clothing
+25,25,3,Vests,Clothing
+26,26,4,Bike Racks,Accessories
+27,27,4,Bike Stands,Accessories
+28,28,4,Bottles and Cages,Accessories
+29,29,4,Cleaners,Accessories
+30,30,4,Fenders,Accessories
+31,31,4,Helmets,Accessories
+32,32,4,Hydration Packs,Accessories
+33,33,4,Lights,Accessories
+34,34,4,Locks,Accessories
+35,35,4,Panniers,Accessories
+36,36,4,Pumps,Accessories
+37,37,4,Tires and Tubes,Accessories

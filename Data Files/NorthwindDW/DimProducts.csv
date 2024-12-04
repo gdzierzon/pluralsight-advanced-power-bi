@@ -1,0 +1,78 @@
+ProductKey,ProductId,ProductName,CategoryName,ListPrice,IsActive
+2001,1,Chai,Beverages,18,True
+2002,2,Chang,Beverages,19,True
+2003,3,Aniseed Syrup,Condiments,10,True
+2004,4,Chef Anton's Cajun Seasoning,Condiments,22,True
+2005,5,Chef Anton's Gumbo Mix,Condiments,21.35,False
+2006,6,Grandma's Boysenberry Spread,Condiments,25,True
+2007,7,Uncle Bob's Organic Dried Pears,Produce,30,True
+2008,8,Northwoods Cranberry Sauce,Condiments,40,True
+2009,9,Mishi Kobe Niku,Meat/Poultry,97,False
+2010,10,Ikura,Seafood,31,True
+2011,11,Queso Cabrales,Dairy Products,21,True
+2012,12,Queso Manchego La Pastora,Dairy Products,38,True
+2013,13,Konbu,Seafood,6,True
+2014,14,Tofu,Produce,23.25,True
+2015,15,Genen Shouyu,Condiments,15.5,True
+2016,16,Pavlova,Confections,17.45,True
+2017,17,Alice Mutton,Meat/Poultry,39,False
+2018,18,Carnarvon Tigers,Seafood,62.5,True
+2019,19,Teatime Chocolate Biscuits,Confections,9.2,True
+2020,20,Sir Rodney's Marmalade,Confections,81,True
+2021,21,Sir Rodney's Scones,Confections,10,True
+2022,22,Gustaf's Knäckebröd,Grains/Cereals,21,True
+2023,23,Tunnbröd,Grains/Cereals,9,True
+2024,24,Guaraná Fantástica,Beverages,4.5,False
+2025,25,NuNuCa Nuß-Nougat-Creme,Confections,14,True
+2026,26,Gumbär Gummibärchen,Confections,31.23,True
+2027,27,Schoggi Schokolade,Confections,43.9,True
+2028,28,Rössle Sauerkraut,Produce,45.6,False
+2029,29,Thüringer Rostbratwurst,Meat/Poultry,123.79,False
+2030,30,Nord-Ost Matjeshering,Seafood,25.89,True
+2031,31,Gorgonzola Telino,Dairy Products,12.5,True
+2032,32,Mascarpone Fabioli,Dairy Products,32,True
+2033,33,Geitost,Dairy Products,2.5,True
+2034,34,Sasquatch Ale,Beverages,14,True
+2035,35,Steeleye Stout,Beverages,18,True
+2036,36,Inlagd Sill,Seafood,19,True
+2037,37,Gravad lax,Seafood,26,True
+2038,38,Côte de Blaye,Beverages,263.5,True
+2039,39,Chartreuse verte,Beverages,18,True
+2040,40,Boston Crab Meat,Seafood,18.4,True
+2041,41,Jack's New England Clam Chowder,Seafood,9.65,True
+2042,42,Singaporean Hokkien Fried Mee,Grains/Cereals,14,False
+2043,43,Ipoh Coffee,Beverages,46,True
+2044,44,Gula Malacca,Condiments,19.45,True
+2045,45,Rogede sild,Seafood,9.5,True
+2046,46,Spegesild,Seafood,12,True
+2047,47,Zaanse koeken,Confections,9.5,True
+2048,48,Chocolade,Confections,12.75,True
+2049,49,Maxilaku,Confections,20,True
+2050,50,Valkoinen suklaa,Confections,16.25,True
+2051,51,Manjimup Dried Apples,Produce,53,True
+2052,52,Filo Mix,Grains/Cereals,7,True
+2053,53,Perth Pasties,Meat/Poultry,32.8,False
+2054,54,Tourtière,Meat/Poultry,7.45,True
+2055,55,Pâté chinois,Meat/Poultry,24,True
+2056,56,Gnocchi di nonna Alice,Grains/Cereals,38,True
+2057,57,Ravioli Angelo,Grains/Cereals,19.5,True
+2058,58,Escargots de Bourgogne,Seafood,13.25,True
+2059,59,Raclette Courdavault,Dairy Products,55,True
+2060,60,Camembert Pierrot,Dairy Products,34,True
+2061,61,Sirop d'érable,Condiments,28.5,True
+2062,62,Tarte au sucre,Confections,49.3,True
+2063,63,Vegie-spread,Condiments,43.9,True
+2064,64,Wimmers gute Semmelknödel,Grains/Cereals,33.25,True
+2065,65,Louisiana Fiery Hot Pepper Sauce,Condiments,21.05,True
+2066,66,Louisiana Hot Spiced Okra,Condiments,17,True
+2067,67,Laughing Lumberjack Lager,Beverages,14,True
+2068,68,Scottish Longbreads,Confections,12.5,True
+2069,69,Gudbrandsdalsost,Dairy Products,36,True
+2070,70,Outback Lager,Beverages,15,True
+2071,71,Flotemysost,Dairy Products,21.5,True
+2072,72,Mozzarella di Giovanni,Dairy Products,34.8,True
+2073,73,Röd Kaviar,Seafood,15,True
+2074,74,Longlife Tofu,Produce,10,True
+2075,75,Rhönbräu Klosterbier,Beverages,7.75,True
+2076,76,Lakkalikööri,Beverages,18,True
+2077,77,Original Frankfurter grüne Soße,Condiments,13,True
