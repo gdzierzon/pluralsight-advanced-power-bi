@@ -1,10 +1,10 @@
-EmployeeKey,EmployeeId,FirstName,LastName,Title,BirthDate,HireDate,SalesRegion
-3001,1,Nancy,Davolio,Sales Representative,1948-12-08,1992-05-01,Eastern                                           
-3002,2,Andrew,Fuller,Vice President, Sales,1952-02-19,1992-08-14,Eastern                                           
-3003,3,Janet,Leverling,Sales Representative,1963-08-30,1992-04-01,Southern                                          
-3004,4,Margaret,Peacock,Sales Representative,1937-09-19,1993-05-03,Eastern                                           
-3005,5,Steven,Buchanan,Sales Manager,1955-03-04,1993-10-17,Eastern                                           
-3006,6,Michael,Suyama,Sales Representative,1963-07-02,1993-10-17,Western                                           
-3007,7,Robert,King,Sales Representative,1960-05-29,1994-01-02,Western                                           
-3008,8,Laura,Callahan,Inside Sales Coordinator,1958-01-09,1994-03-05,Northern                                          
-3009,9,Anne,Dodsworth,Sales Representative,1966-01-27,1994-11-15,Northern                                          
+"EmployeeKey","EmployeeId","FirstName","LastName","Title","BirthDate","HireDate","SalesRegion"
+"3001","1","Nancy","Davolio","Sales Representative","1948-12-08","1992-05-01","Eastern                                           "
+"3002","2","Andrew","Fuller","Vice President, Sales","1952-02-19","1992-08-14","Eastern                                           "
+"3003","3","Janet","Leverling","Sales Representative","1963-08-30","1992-04-01","Southern                                          "
+"3004","4","Margaret","Peacock","Sales Representative","1937-09-19","1993-05-03","Eastern                                           "
+"3005","5","Steven","Buchanan","Sales Manager","1955-03-04","1993-10-17","Eastern                                           "
+"3006","6","Michael","Suyama","Sales Representative","1963-07-02","1993-10-17","Western                                           "
+"3007","7","Robert","King","Sales Representative","1960-05-29","1994-01-02","Western                                           "
+"3008","8","Laura","Callahan","Inside Sales Coordinator","1958-01-09","1994-03-05","Northern                                          "
+"3009","9","Anne","Dodsworth","Sales Representative","1966-01-27","1994-11-15","Northern                                          "
