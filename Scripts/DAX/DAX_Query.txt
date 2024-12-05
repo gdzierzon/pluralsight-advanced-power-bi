@@ -1,0 +1,14 @@
+EVALUATE	
+
+	VAR MinYear = 1996 
+	VAR MaxYear = 1998 
+	VAR NewCalendar = 		FILTER(
+								CALENDARAUTO(),
+								YEAR([Date]) >= MinYear && YEAR([Date]) <= MaxYear
+							)
+	
+	RETURN
+	ADDCOLUMNS(
+		NewCalendar, 
+		"Year", YEAR([Date])
+	)

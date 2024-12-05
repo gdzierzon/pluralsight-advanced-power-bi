@@ -1,27 +1,28 @@
 let
-    StartDate = #date(1996, 1, 1),
-    EndDate = #date(1999, 1, 1),
+    StartDate = #date(2011, 1, 1),
+    EndDate = #date(2015, 1, 1),
     NumberOfDays = Duration.Days(Duration.From(EndDate-StartDate)),
     Source = List.Dates(StartDate,NumberOfDays ,#duration(1,0,0,0)),
     TableFromList = Table.FromList(Source,Splitter.SplitByNothing(),{"Date"}),
-    #"Convert to Date" = Table.TransformColumnTypes(TableFromList,{{"Date", type date}}),
-    #"Add DateKey" = Table.AddColumn(#"Convert to Date", "OrderDateKey", each Text.PadStart(Text.From(Date.Year([Date])), 4, "0") &
-Text.PadStart(Text.From(Date.Month([Date])), 2, "0") &
-Text.PadStart(Text.From(Date.Day([Date])), 2, "0")),
-    #"Converted DateKey" = Table.TransformColumnTypes(#"Add DateKey",{{"OrderDateKey", Int64.Type}}),
-    #"Move DateKey" = Table.ReorderColumns(#"Converted DateKey",{"OrderDateKey", "Date"}),
-    #"Inserted Year" = Table.AddColumn(#"Move DateKey", "Year", each Date.Year([Date]), Int64.Type),
-    #"Inserted Quarter" = Table.AddColumn(#"Inserted Year", "Quarter", each Date.QuarterOfYear([Date]), Int64.Type),
+    #"Added Custom" = Table.AddColumn(TableFromList, "DateKey", each Date.ToText([Date],"yyyyMMdd")),
+    #"Reordered Columns" = Table.ReorderColumns(#"Added Custom",{"DateKey", "Date"}),
+    #"Changed Type" = Table.TransformColumnTypes(#"Reordered Columns",{{"DateKey", Int64.Type}}),
+    #"Inserted Year" = Table.AddColumn(#"Changed Type", "Year", each Date.Year([Date]), Int64.Type),
+    #"Inserted Start of Year" = Table.AddColumn(#"Inserted Year", "Start of Year", each Date.StartOfYear([Date]), type date),
+    #"Inserted Start of Month" = Table.AddColumn(#"Inserted Start of Year", "Start of Month", each Date.StartOfMonth([Date]), type date),
+    #"Inserted Start of Week" = Table.AddColumn(#"Inserted Start of Month", "Start of Week", each Date.StartOfWeek([Date]), type date),
+    #"Inserted Quarter" = Table.AddColumn(#"Inserted Start of Week", "Quarter", each Date.QuarterOfYear([Date]), Int64.Type),
     #"Inserted Month" = Table.AddColumn(#"Inserted Quarter", "Month", each Date.Month([Date]), Int64.Type),
-    #"Inserted Day" = Table.AddColumn(#"Inserted Month", "Day", each Date.Day([Date]), Int64.Type),
-    #"Inserted Month Name" = Table.AddColumn(#"Inserted Day", "MonthName", each Date.MonthName([Date])),
-    #"Inserted Day of Week" = Table.AddColumn(#"Inserted Month Name", "Day of Week", each Date.DayOfWeek([Date]), Int64.Type),
+    #"Reordered Columns1" = Table.ReorderColumns(#"Inserted Month",{"DateKey", "Date", "Start of Year", "Start of Month", "Start of Week", "Year", "Quarter", "Month"}),
+    #"Inserted Month Name" = Table.AddColumn(#"Reordered Columns1", "Month Name", each Date.MonthName([Date]), type text),
+    #"Inserted Day" = Table.AddColumn(#"Inserted Month Name", "Day", each Date.Day([Date]), Int64.Type),
+    #"Inserted Day of Week" = Table.AddColumn(#"Inserted Day", "Day of Week", each Date.DayOfWeek([Date]), Int64.Type),
     #"Inserted Day Name" = Table.AddColumn(#"Inserted Day of Week", "Day Name", each Date.DayOfWeekName([Date]), type text),
-    #"Inserted IsWeekend" = Table.AddColumn(#"Inserted Day Name", "IsWeekend", each if (
-    Date.DayOfWeek([Date], Day.Sunday) = 0 or 
-    Date.DayOfWeek([Date], Day.Sunday) = 6
-) 
-then "Weekend" 
-else "Weekday")
+    #"Added Custom1" = Table.AddColumn(#"Inserted Day Name", "IsWeekend", each if(
+    [Day of Week] = 0 
+    or [Day of Week] = 6
+) then true 
+else false),
+    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom1",{{"IsWeekend", type logical}, {"Date", type date}})
 in
-    #"Inserted IsWeekend"
+    #"Changed Type1"
