@@ -1,0 +1,74 @@
+Revenue Total = SUM (
+    FactSales[NetSalesAmount]
+)
+
+-------------
+
+Revenue All = CALCULATE (
+    SUM(FactSales[NetSalesAmount]),
+    ALL(FactSales)
+)
+
+-------------
+
+Revenue Percent of Total = [Revenue Total]/[Revenue All] 
+
+-------------
+
+Revenue Last Month = 
+CALCULATE(
+    [Revenue Total],
+    PREVIOUSMONTH(DimDate[Date])
+)
+
+-------------
+
+Revenue Last Year = CALCULATE(
+    SUM(FactSales[NetSalesAmount]),
+    SAMEPERIODLASTYEAR(DimDate[Date])
+)
+
+-------------
+
+Revenue Target Month = [Revenue Last Month] * 1.2
+
+-------------
+
+Revenue Target Year = [Revenue Last Year] * 1.2
+
+-------------
+
+% of Goal = if([Revenue Target Month] = 0
+                , 0
+                , [Revenue Total] / [Revenue Target Month]
+            )
+
+-------------
+
+Goal Offset = [% of Goal] - 1 
+
+-------------
+
+Gague Last Month Max = [Revenue Last Month] * 1.5
+
+-------------
+
+Gague Last Year Max = [Revenue Last Year] * 1.5
+
+-------------
+
+Revenue Cell Color = if([% of Goal] < .5, 
+                            "#f0d8d8",
+                            IF([% of Goal] < .8, 
+                                    "#f0ebd8", 
+                                    "#d8f0dc")
+                        )
+
+-------------
+
+Revenue Month Gauge Color = if([% of Goal] < .5, 
+        "#920000",
+        IF([% of Goal] < .8, 
+            "#c0a300", 
+            "#165f04")
+    )
